@@ -1,0 +1,3703 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow functions</title>
+    <link rel="stylesheet" href="./output.css" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../src/images/favicon.ico"
+    />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico " />
+    <script src="./js/scripts_ex1.js"></script>
+    <script src="./js/scripts_ex2.js"></script>
+    <script src="./js/scripts_ex3.js"></script>
+    <script src="./js/scripts_ex4.js"></script>
+    <script src="./js/scripts_ex5.js"></script>
+    <script src="./js/scripts_ex6.js"></script>
+    <script src="./js/scripts_ex7.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div
+        class="relative isolate lg:h-screen overflow-hidden py-24 sm:py-20 bg-[linear-gradient(90deg,_rgba(2,0,36,1)_0%,_rgba(7,7,79,1)_35%,_rgba(9,11,33,1)_100%)]"
+      >
+        <div
+          class="hidden overflow-hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
+          aria-hidden="true"
+        >
+          <div
+            class="overflow-hidden aspect-1097/845 w-[68.5625rem] bg-linear-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+            style="
+              clip-path: polygon(
+                74.1% 44.1%,
+                100% 61.6%,
+                97.5% 26.9%,
+                85.5% 0.1%,
+                80.7% 2%,
+                72.5% 32.5%,
+                60.2% 62.4%,
+                52.4% 68.1%,
+                47.5% 58.3%,
+                45.2% 34.5%,
+                27.5% 76.7%,
+                0.1% 64.9%,
+                17.9% 100%,
+                27.6% 76.8%,
+                76.1% 97.7%,
+                74.1% 44.1%
+              );
+            "
+          ></div>
+        </div>
+        <div
+          class="overflow-hidden absolute -top-52 left-1/5 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:translate-x-0 sm:transform-gpu"
+          aria-hidden="true"
+        >
+          <div
+            class="overflow-hidden aspect-800/845 w-[68.5625rem] bg-linear-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+            style="
+              clip-path: polygon(
+                74.1% 44.1%,
+                100% 61.6%,
+                97.5% 26.9%,
+                85.5% 0.1%,
+                80.7% 2%,
+                72.5% 32.5%,
+                60.2% 62.4%,
+                52.4% 68.1%,
+                47.5% 58.3%,
+                45.2% 34.5%,
+                27.5% 76.7%,
+                0.1% 64.9%,
+                17.9% 100%,
+                27.6% 76.8%,
+                76.1% 97.7%,
+                74.1% 44.1%
+              );
+            "
+          ></div>
+        </div>
+        <div
+          class="flex items-center p-12 rounded-2xl justify-around flex-col lg:flex-row"
+        >
+          <div class="lg:w-2/4 w-full">
+            <h1
+              class="text-5xl font-bold lg:text-left text-center tracking-tight text-white lg:text-8xl xl:text-9xl"
+            >
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-[#7534bb] via-[#de4b4b] to-yellow-500"
+              >
+                Sprint 2 JavaScript I
+              </span>
+            </h1>
+          </div>
+          <div class="flex flex-col">
+            <p
+              class="font-bold text-xl text-gray-700 dark:text-white text-center my-6"
+            >
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-[#f25050] via-[#ded24b] to-[#3175b0]"
+              >
+                S2.1. Exercicis bàsics JavaScript
+              </span>
+            </p>
+
+            <button
+              onclick="location.href='#arrow-functions'"
+              class="items-center my-3 justify-center whitespace-nowrap rounded-md text-sm font-medium transition-transform duration-200 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group relative animate-rainbow cursor-pointer border-0 bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] bg-[length:200%] text-foreground [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-[0] before:h-[20%] before:w-[60%] before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] before:[filter:blur(calc(0.8*1rem))] dark:bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] hover:scale-105 active:scale-95 h-10 px-4 py-2 inline-flex"
+            >
+              <div class="flex items-center">
+                <div class="flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-equal"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 10h14" />
+                    <path d="M5 14h14" />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="24"
+                    viewBox="10 0 15 24"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right ml-0 pl-0"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M9 6l6 6l-6 6" />
+                  </svg>
+                </div>
+                <span class="text-white lg:inline p-1">Arrow functions</span>
+              </div>
+            </button>
+
+            <button
+              onclick="location.href='#operador-ternari'"
+              class="items-center my-3 justify-center whitespace-nowrap rounded-md text-sm font-medium transition-transform duration-200 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group relative animate-rainbow cursor-pointer border-0 bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] bg-[length:200%] text-foreground [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-[0] before:h-[20%] before:w-[60%] before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] before:[filter:blur(calc(0.8*1rem))] dark:bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] hover:scale-105 active:scale-95 h-10 px-4 py-2 inline-flex"
+            >
+              <div class="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-question-mark"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M8 8a3.5 3 0 0 1 3.5 -3h1a3.5 3 0 0 1 3.5 3a3 3 0 0 1 -2 3a3 4 0 0 0 -2 4"
+                  />
+                  <path d="M12 19l0 .01" /></svg
+                ><span class="ml-1 text-white lg:inline p-1"
+                  >Operador ternari</span
+                >
+              </div>
+            </button>
+
+            <button
+              onclick="location.href='#callbacks'"
+              class="items-center my-3 justify-center whitespace-nowrap rounded-md text-sm font-medium transition-transform duration-200 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group relative animate-rainbow cursor-pointer border-0 bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] bg-[length:200%] text-foreground [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-[0] before:h-[20%] before:w-[60%] before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] before:[filter:blur(calc(0.8*1rem))] dark:bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] hover:scale-105 active:scale-95 h-10 px-4 py-2 inline-flex"
+            >
+              <div class="flex items-center">
+                <div class="flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-phone"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="19"
+                    height="19"
+                    viewBox="3 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-back-up"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M9 14l-4 -4l4 -4" />
+                    <path d="M5 10h11a4 4 0 1 1 0 8h-1" />
+                  </svg>
+                </div>
+
+                <span class="ml-1 text-white lg:inline p-1">Callbacks</span>
+              </div>
+            </button>
+
+            <button
+              onclick="location.href='#rest-spread'"
+              class="items-center my-3 justify-center whitespace-nowrap rounded-md text-sm font-medium transition-transform duration-200 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group relative animate-rainbow cursor-pointer border-0 bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] bg-[length:200%] text-foreground [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-[0] before:h-[20%] before:w-[60%] before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] before:[filter:blur(calc(0.8*1rem))] dark:bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] hover:scale-105 active:scale-95 h-10 px-4 py-2 inline-flex"
+            >
+              <div class="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-dots"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                  <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                  <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg
+                ><span class="ml-1 text-white lg:inline p-1"
+                  >Rest & Spread operators</span
+                >
+              </div>
+            </button>
+
+            <button
+              onclick="location.href='#array-transformations'"
+              class="items-center my-3 justify-center whitespace-nowrap rounded-md text-sm font-medium transition-transform duration-200 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group relative animate-rainbow cursor-pointer border-0 bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] bg-[length:200%] text-foreground [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-[0] before:h-[20%] before:w-[60%] before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] before:[filter:blur(calc(0.8*1rem))] dark:bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] hover:scale-105 active:scale-95 h-10 px-4 py-2 inline-flex"
+            >
+              <div class="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-brackets"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M8 4h-3v16h3" />
+                  <path d="M16 4h3v16h-3" /></svg
+                ><span class="ml-1 text-white lg:inline p-1"
+                  >Array transformations</span
+                >
+              </div>
+            </button>
+
+            <button
+              onclick="location.href='#array-loops'"
+              class="items-center my-3 justify-center whitespace-nowrap rounded-md text-sm font-medium transition-transform duration-200 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group relative animate-rainbow cursor-pointer border-0 bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] bg-[length:200%] text-foreground [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-[0] before:h-[20%] before:w-[60%] before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] before:[filter:blur(calc(0.8*1rem))] dark:bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] hover:scale-105 active:scale-95 h-10 px-4 py-2 inline-flex"
+            >
+              <div class="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-brackets-contain"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M7 4h-4v16h4" />
+                  <path d="M17 4h4v16h-4" />
+                  <path d="M8 16h.01" />
+                  <path d="M12 16h.01" />
+                  <path d="M16 16h.01" /></svg
+                ><span class="ml-1 text-white lg:inline p-1">Array loops</span>
+              </div>
+            </button>
+
+            <button
+              class="items-center my-3 justify-center whitespace-nowrap rounded-md text-sm font-medium transition-transform duration-200 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group relative animate-rainbow cursor-pointer border-0 bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] bg-[length:200%] text-foreground [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-[0] before:h-[20%] before:w-[60%] before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] before:[filter:blur(calc(0.8*1rem))] dark:bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,hsl(0,100%,63%),hsl(90,100%,63%),hsl(210,100%,63%),hsl(195,100%,63%),hsl(270,100%,63%))] hover:scale-105 active:scale-95 h-10 px-4 py-2 inline-flex"
+            >
+              <div class="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-clock-pause"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M20.942 13.018a9 9 0 1 0 -7.909 7.922" />
+                  <path d="M12 7v5l2 2" />
+                  <path d="M17 17v5" />
+                  <path d="M21 17v5" /></svg
+                ><span class="ml-1 text-white lg:inline p-1"
+                  >Promises & Async/Await</span
+                >
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--exercici1-->
+    <main
+      class="bg-[linear-gradient(90deg,_rgba(2,0,36,1)_0%,_rgba(7,7,79,1)_35%,_rgba(9,11,33,1)_100%)] bg-cover h-full w-full"
+    >
+      <div
+        id="arrow-functions"
+        class="pt-10 flex justify-center items-center lg:justify-start lg:items-start"
+      >
+        <h2
+          class="font-bold text-center text-gray-700 dark:text-white lg:ml-52 text-6xl my-3"
+        >
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#7534bb] via-[#de4b4b] to-yellow-500"
+          >
+            Arrow functions
+          </span>
+        </h2>
+      </div>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 1
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Conversió de funcions: Tens una funció add que accepta dos
+                paràmetres i retorna la seva suma. Converteix-la en una funció
+                de fletxa. Per exemple: function add(a, b) {return a + b;}.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array functions</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-full p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Suma de dos números
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un número</label
+                  >
+                  <input
+                    type="number"
+                    id="suma1"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder="Primer número"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un segon número</label
+                  >
+                  <input
+                    type="number"
+                    id="suma2"
+                    placeholder="Segon número"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="small-input"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onclick="calcularSuma()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Calcular
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 2
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Funció de fletxa sense paràmetres: Crea una funció de fletxa
+                anomenada randomNumber que no necessiti paràmetres i que retorni
+                un número aleatori entre 0 i 100.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array functions</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 p-4 flex items-center justify-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Número aleatori entre 0 i 100.
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="random-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="randomNumber()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Calcular
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 3
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Ús de 'this' en les funcions de fletxa: Crea una classe person
+                que tingui una propietat name i una funció greet que utilitzi
+                una funció de fletxa. La funció ha d'imprimir una salutació que
+                inclogui el nom de la persona. Per exemple: console.log(Hola,
+                ${this.name});.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array functions</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 p-4 flex items-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Salutació del nom de la persona
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un nom</label
+                  >
+                  <input
+                    type="text"
+                    id="saludar-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "Juan"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="saludar-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onclick="saludar()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Saludar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 2 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 4
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Funció de fletxa dins d'un loop: Crea una funció anomenada
+                printNumbers que accepti un array de números i utilitzi un loop
+                for per imprimir cada número a la consola utilitzant una funció
+                de fletxa.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array functions</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 3 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 5
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Funció de fletxa amb 'setTimeout': Crea una funció de fletxa que
+                imprimeixi un missatge a la consola després d'esperar 3 segons.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array functions</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 p-4 flex items-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Missatge després de 3 segons
+                </h5>
+                <div>
+                  <label
+                    for="email"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un missatge</label
+                  >
+                  <input
+                    type="text"
+                    id="message-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder="Ingresa el teu missatge"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="message-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <div
+                  class="flex items-center justify-center"
+                  id="countdown"
+                ></div>
+
+                <button
+                  type="button"
+                  onclick="printMessage()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        id="operador-ternari"
+        class="pt-10 flex justify-center items-center lg:justify-start lg:items-start"
+      >
+        <h2
+          class="font-bold text-center text-gray-700 dark:text-white lg:ml-52 text-6xl my-6"
+        >
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#7534bb] via-[#de4b4b] to-yellow-500"
+          >
+            Operador ternari
+          </span>
+        </h2>
+      </div>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 1
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Operador ternari bàsic: Escriu una funció potConduir que accepti
+                l'edat com a paràmetre i utilitzi l'operador ternari per
+                determinar si l'usuari pot conduir. Si l'edat és 18 o més, ha de
+                retornar 'Pots conduir'. Si no, ha de retornar 'No pots
+                conduir'.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Operador ternari</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Determinar si l'usuari pot conduir.
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa la teva edat</label
+                  >
+                  <input
+                    type="number"
+                    id="edat-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "45"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="edat-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="mostrarPotConduir()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Comprovar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 2
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Ús amb operadors de comparació: Escriu una expressió que
+                utilitzi l'operador ternari per determinar quin dels dos números
+                donats (num1 i num2) és més gran. Si num1 és més gran, retorna
+                'num1 és més gran'. Si no, retorna 'num2 és més gran'.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Operador ternari</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-full p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Comparació de 2 números
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un número</label
+                  >
+                  <input
+                    type="number"
+                    id="numA"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder="Primer número"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un segon número</label
+                  >
+                  <input
+                    type="number"
+                    id="numB"
+                    placeholder="Segon número"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="comparision-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onclick="handleComparision()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Comparar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-4/5 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 2 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 3
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Ús enllaçat d'operadors ternaris: Escriu una expressió que
+                utilitzi enllaços d'operadors ternaris per determinar si un
+                número és positiu, negatiu o zero. Operador ternari amb
+                funcions: Crea una funció trobarMaxim que accepti tres
+                paràmetres (a, b, c) i utilitzi l'operador ternari per
+                determinar el valor màxim.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Operador ternari</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm lg:mr-10 lg:pr-10 lg:py-6 mb-14 lg:mb-0 h-96 p-4 flex items-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <label
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Exercici 3.1</label
+                >
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Salutació del nom de la persona
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un nom</label
+                  >
+                  <input
+                    type="text"
+                    id="saludar-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "Juan"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="saludar-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onclick="saludar()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Saludar
+                </button>
+              </form>
+            </div>
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <label
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Exercici 3.2</label
+                >
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 2 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 4
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Callbacks amb arrays: Escriu una funció processarElements que
+                accepti dos paràmetres: un array i una funció de callback. La
+                funció processarElements ha d'invocar la funció de callback per
+                cada element de l'array.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Operador ternari</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        id="callbacks"
+        class="pt-10 flex justify-center items-center lg:justify-start lg:items-start"
+      >
+        <h2
+          class="font-bold text-center text-gray-700 dark:text-white lg:ml-52 text-6xl my-6"
+        >
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#7534bb] via-[#de4b4b] to-yellow-500"
+          >
+            Callbacks
+          </span>
+        </h2>
+      </div>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 1
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Callback bàsic: Escriu una funció anomenada processar que
+                accepti dos paràmetres: un número i una funció de callback. La
+                funció processar ha d'invocar la funció de callback, passant el
+                número com a paràmetre.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Callbacks</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-full p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Suma de dos números
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un número</label
+                  >
+                  <input
+                    type="number"
+                    id="suma1"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder="Primer número"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un segon número</label
+                  >
+                  <input
+                    type="number"
+                    id="suma2"
+                    placeholder="Segon número"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="small-input"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onclick="calcularSuma()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Calcular
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 2
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Callbacks amb operacions matemàtiques: Escriu una funció
+                calculadora que accepti tres paràmetres: dos números i una
+                funció de callback. La funció calculadora ha d'invocar la funció
+                de callback amb els dos números com a paràmetres. Després, crida
+                calculadora amb una funció que faci la suma dels dos números.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Callbacks</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 p-4 flex items-center justify-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Número aleatori entre 0 i 100.
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="random-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="randomNumber()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Calcular
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 2 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 3
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Ús de callbacks en funcions asíncrones: Escriu una funció
+                esperarISaludar que accepti dos paràmetres: un nom i una funció
+                de callback. La funció ha d'esperar 2 segons i llavors invocar
+                la funció de callback, passant el nom com a paràmetre.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Callbacks</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 p-4 flex items-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Salutació del nom de la persona
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un nom</label
+                  >
+                  <input
+                    type="text"
+                    id="saludar-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "Juan"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="saludar-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onclick="saludar()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Saludar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 2 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 4
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Operador ternari dins un bucle: Escriu una funció parOImpar que
+                accepti un array de números i utilitzi un bucle per a recórrer
+                l'array. Dins del bucle, utilitza l'operador ternari per a
+                determinar si cada número és parell o imparell.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Callbacks</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 3 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 5
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Escriu una funció processarCadena que accepti dos paràmetres:
+                una cadena de caràcters i una funció de callback. La funció
+                processarCadena ha de convertir la cadena a majúscules i llavors
+                invocar la funció de callback amb la cadena transformada.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Callbacks</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        id="rest-spread"
+        class="pt-10 flex justify-center items-center lg:justify-start lg:items-start"
+      >
+        <h2
+          class="font-bold text-center text-gray-700 dark:text-white lg:ml-52 text-6xl my-6"
+        >
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#7534bb] via-[#de4b4b] to-yellow-500"
+          >
+            Rest & Spread operators
+          </span>
+        </h2>
+      </div>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 1
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Operador Spread en Arrays: Crea dues arrays, array1 i array2.
+                Utilitza l'operador spread per a crear una tercera array que
+                contingui tots els elements de array1 i array2.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Rest & Spread operators</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-full p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Suma de dos números
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un número</label
+                  >
+                  <input
+                    type="number"
+                    id="suma1"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder="Primer número"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un segon número</label
+                  >
+                  <input
+                    type="number"
+                    id="suma2"
+                    placeholder="Segon número"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="small-input"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onclick="calcularSuma()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Calcular
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 2
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Operador Rest en Funcions: Crea una funció 'suma' que utilitzi
+                l'operador rest per a acceptar un número indeterminat
+                d'arguments i retornar la seva suma.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Rest & Spread operators</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 p-4 flex items-center justify-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Número aleatori entre 0 i 100.
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="random-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="randomNumber()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Calcular
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 2 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 3
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Copiant objectes amb Spread: Crea un objecte 'objecte1'. Després
+                crea un segon objecte, 'objecte2', que sigui una còpia de
+                'objecte1' utilitzant l'operador spread. Canvia una propietat de
+                'objecte2' i comprova que 'objecte1' no ha canviat.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Rest & Spread operators</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 p-4 flex items-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Salutació del nom de la persona
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un nom</label
+                  >
+                  <input
+                    type="text"
+                    id="saludar-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "Juan"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="saludar-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onclick="saludar()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Saludar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 2 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 4
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Rest en Destructuring: Crea una array amb diversos elements.
+                Utilitza destructuring i l'operador rest per a assignar els
+                primers dos elements a variables, i després assignar la resta
+                dels elements a una tercera variable.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Rest & Spread operators</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 3 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 5
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Spread en Funcions: Crea una funció que accepti tres arguments.
+                Després, crea una array amb tres elements i crida la funció
+                utilitzant l'operador spread amb aquesta array.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Rest & Spread operators</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 3 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 6
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Fusionant Objectes amb Spread: Crea dos objectes amb propietats
+                diferents. Utilitza l'operador spread per a fusionar aquests dos
+                objectes en un de nou.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Rest & Spread operators</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        id="array-transformations"
+        class="pt-10 flex justify-center items-center lg:justify-start lg:items-start"
+      >
+        <h2
+          class="font-bold text-center text-gray-700 dark:text-white lg:ml-52 text-6xl my-6"
+        >
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#7534bb] via-[#de4b4b] to-yellow-500"
+          >
+            Array transformations
+          </span>
+        </h2>
+      </div>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 1
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Map: Teniu un array de números [1, 2, 3, 4]. Crea una nova array
+                que contingui el quadrat de cada número.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array transformations</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-full p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Suma de dos números
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un número</label
+                  >
+                  <input
+                    type="number"
+                    id="suma1"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder="Primer número"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un segon número</label
+                  >
+                  <input
+                    type="number"
+                    id="suma2"
+                    placeholder="Segon número"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="small-input"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onclick="calcularSuma()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Calcular
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 2
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Filter: Teniu una array de números [1, 2, 3, 4]. Crea una nova
+                array que només contingui els números parells.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array transformations</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 p-4 flex items-center justify-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Número aleatori entre 0 i 100.
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="random-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="randomNumber()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Calcular
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 3
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Find: Teniu una array de números [1, 10 , 8, 11]. Utilitza la
+                funció find per a trobar el primer número que és major a 10.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array transformations</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 p-4 flex items-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Salutació del nom de la persona
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un nom</label
+                  >
+                  <input
+                    type="text"
+                    id="saludar-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "Juan"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="saludar-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onclick="saludar()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Saludar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 4
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Reduce: Teniu una array de números [13, 7, 8, 21]. Fes servir la
+                funció reduce per a calcular la suma total dels números.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array transformations</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 2 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 5
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Donat un array "[ 1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9 ]", crea
+                una funció en una sola línia que faci el següent:
+              </p>
+              <p>- Filtra els números majors o iguals a 10.</p>
+              <p>- Multiplica cada número filtrat per 2.</p>
+              <p>
+                - Calcula la suma dels números filtrats i multiplicats per 2.
+              </p>
+              <p class="mb-4">
+                - La funció ha de retornar el resultat de la suma.
+              </p>
+
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array transformations</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 3 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 6
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Every / Some: Usa every i some per a determinar si tots o alguns
+                dels elements de l'array [11, 12, 13, 14] són majors que 10,
+                respectivament
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array transformations</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        id="array-loops"
+        class="pt-10 flex justify-center items-center lg:justify-start lg:items-start"
+      >
+        <h2
+          class="font-bold text-center text-gray-700 dark:text-white lg:ml-52 text-6xl my-6"
+        >
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#7534bb] via-[#de4b4b] to-yellow-500"
+          >
+            Array loops
+          </span>
+        </h2>
+      </div>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 1
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                forEach: Teniu una array de noms. Utilitza forEach per a
+                imprimir cada nom a la consola: let noms = ['Anna', 'Bernat',
+                'Clara'];
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array loops</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-full p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Suma de dos números
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un número</label
+                  >
+                  <input
+                    type="number"
+                    id="suma1"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder="Primer número"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un segon número</label
+                  >
+                  <input
+                    type="number"
+                    id="suma2"
+                    placeholder="Segon número"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="small-input"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onclick="calcularSuma()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Calcular
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 2
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                for-of: Teniu una array de noms. Utilitza un bucle for-of per a
+                imprimir cada nom a la consola: let noms = ['Anna', 'Bernat',
+                'Clara'];
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array loops</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 p-4 flex items-center justify-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Número aleatori entre 0 i 100.
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="random-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="randomNumber()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Calcular
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 3
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                filter: Teniu una array de números. Utilitza filter per a crear
+                una nova array que només contingui els números parells. let
+                numeros = [1, 2, 3, 4, 5, 6];
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array loops</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 p-4 flex items-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Salutació del nom de la persona
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un nom</label
+                  >
+                  <input
+                    type="text"
+                    id="saludar-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "Juan"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="saludar-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onclick="saludar()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Saludar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 2 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 4
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                for-in: Teniu un objecte amb parells clau-valor: let obj = {
+                nom: Ona, edat: 25, ciutat: 'Barcelona' }; Utilitza un bucle
+                for-in per a imprimir a la consola cada clau i el seu valor
+                corresponent.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array loops</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 2 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 5
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                for-of amb break: Teniu una array de números. Utilitza un bucle
+                for-of per a imprimir a la consola els números fins a trobar el
+                número 5, llavors atura el bucle: let numeros = [1, 2, 3, 4, 5,
+                6];
+              </p>
+
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array loops</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 3 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 6
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                for-of amb index: Utilitza un bucle for-of per a imprimir a la
+                consola cada element de l'array i la seva posició (index): let
+                noms = ['Anna', 'Bernat', 'Clara']
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Array loops</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        id="array-loops"
+        class="pt-10 flex justify-center items-center lg:justify-start lg:items-start"
+      >
+        <h2
+          class="font-bold text-center text-gray-700 dark:text-white lg:ml-52 text-6xl my-6"
+        >
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#7534bb] via-[#de4b4b] to-yellow-500"
+          >
+            Promises & Async/Await
+          </span>
+        </h2>
+      </div>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 1
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Creació d'una Promesa: Crea una promesa que es resolgui després
+                de 2 segons i que retorni la cadena de text 'Hola, món'.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Promises & Async/Await</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-full p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Suma de dos números
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un número</label
+                  >
+                  <input
+                    type="number"
+                    id="suma1"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder="Primer número"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un segon número</label
+                  >
+                  <input
+                    type="number"
+                    id="suma2"
+                    placeholder="Segon número"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="small-input"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onclick="calcularSuma()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Calcular
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 2
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Utilització d'una Promesa: Utilitza la promesa creada en
+                l'exercici anterior. Crea un .then que imprimeixi el resultat a
+                la consola.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Promises & Async/Await</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 p-4 flex items-center justify-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Número aleatori entre 0 i 100.
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="random-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="randomNumber()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Calcular
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 3
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Promesa amb reject: Crea una promesa que es resolgui després de
+                2 segons si l'input és igual a 'Hola', i que la rebutgi si
+                l'input és qualsevol altra cosa.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Promises & Async/Await</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 p-4 flex items-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Salutació del nom de la persona
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa un nom</label
+                  >
+                  <input
+                    type="text"
+                    id="saludar-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "Juan"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="saludar-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onclick="saludar()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Saludar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 1 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 4
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Ús de async/await: Escriu una funció asíncrona que utilitzi la
+                funció await per a esperar el resultat de la promesa creada a
+                l'exercici 1, i que després imprimeixi aquest resultat a la
+                consola.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Promises & Async/Await</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 2 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-regular.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 5
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Gestió d'errors amb async/await: Modifica la funció de
+                l'exercici 4 per a que capturi qualsevol possible error
+                utilitzant un bloc try/catch.
+              </p>
+
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Promises & Async/Await</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-white body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="mx-auto flex flex-wrap justify-center items-center">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2
+                class="text-sm title-font text-gray-500 tracking-widest flex mb-1.5"
+              >
+                NIVELL 3 <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+                <img class="w-4 ml-1" src="./images/star-solid.svg" />
+              </h2>
+              <h1 class="text-white text-3xl title-font font-medium mb-4">
+                Exercici 6
+              </h1>
+              <div class="flex mb-4">
+                <a
+                  class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
+                  >Description</a
+                >
+              </div>
+              <p class="leading-relaxed mb-4">
+                Promise.all: Crea dues promeses que es resolguin després de 2 i
+                3 segons, respectivament. Utilitza Promise.all per a esperar que
+                ambdues promeses es resolguin, i imprimeix els resultats a la
+                consola.
+              </p>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Promises & Async/Await</span>
+                <span class="ml-auto text-gray-900">Blue</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Javascript</span>
+                <span class="ml-auto text-gray-900">Medium</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Sprint 2</span>
+                <span class="ml-auto text-gray-900">4</span>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-sm h-96 flex items-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+            >
+              <form class="space-y-6 flex flex-col w-full" action="#">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white">
+                  Imprimir cada número d'un array
+                </h5>
+                <div>
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Ingresa números separats per una coma</label
+                  >
+                  <input
+                    type="text"
+                    id="array-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder='Exemple: "1, 5, 8, 9"'
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Resultat</label
+                  >
+                  <input
+                    type="text"
+                    id="array-output"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onclick="ArrayInput()"
+                  class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Imprimir
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
+<!--exercici2-->
