@@ -1,4 +1,4 @@
-# 📚 Stage 2.2 - E-Commerce
+# 📚Sprint 2.1 - Javascript Exercises
 
 
 ## 🧠 Goals
